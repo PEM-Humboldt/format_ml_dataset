@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Este script permite 
+Este documento describe un paso a paso para usar anotaciones y registros sonoros 
+para crear un set de datos fáciles de usar en un flujo de trabajo de Machine 
+Learning. Las anotaciones siguen el formato Darwin Core de eventos de monitoreo 
+y están alojados en la infraestructura de de datos.
 
-@author: jsulloa
 """
 import numpy as np
 import pandas as pd
