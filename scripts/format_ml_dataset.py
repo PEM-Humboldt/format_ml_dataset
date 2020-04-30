@@ -14,8 +14,7 @@ from os import path
 def load_format_excel(fname):
     df = pd.read_excel(fname)
     
-    cols_idx = ['genus','specificEpithet', 'infraspecificEpithet',
-                'record number',
+    cols_idx = ['genus','specificEpithet', 'record number',
                 'Valor de la medida (Calidad Corte)',
                 'Valor de la medida (Duración en segundos)',
                 'Valor de la medida (Tiempo Inicial en Segundosundos)',
