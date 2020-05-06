@@ -22,7 +22,7 @@ Annotations are stored at the I2D of the Humboldt Institute:
 
 Environmental audio files are stored at the [Colección de Sonidos Ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Access to these files should be asked at coleccionesbiologicas@humboldt.org.co
 
-### 1.Load libraries and functions
+### 1. Load libraries and functions
 
 ```python
 import pandas as pd
@@ -96,7 +96,7 @@ for fname, df_gp in gpby:
                                  sr=fs)
 ```
 
-### Resultados
+### 4. Check results
 
 As a result, the script saves a list of audio regions located in the directory `../audio_cortes/`. Each region has a name and unique index and a `*.csv` compiles all the associated metadata.
 
