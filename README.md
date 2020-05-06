@@ -1,26 +1,28 @@
-# Formatear anotaciones y audio para reconocimiento de patrones
+# Format annotations and audio to develop pattern recognition tools
 
-Este documento describe un paso a paso para usar anotaciones y registros sonoros para crear un set de datos fáciles de usar en un flujo de trabajo de Machine Learning. Las anotaciones siguen el formato Darwin Core de eventos de monitoreo y están alojados en la infraestructura de de datos.
+The purpose of this script is to format audio regions based on annotations stored in Darwin Core format and create a dataset that can be used to fit Machine Learning models.
 
-## Dependencias
+## Getting started
 
-Paquetes necesarios para correr este script:
+### Prerequisites
+
 - Python >= 3.5
 - Pandas >= 0.24
 - Librosa >= 0.6
 
-## Annotaciones manuales
+### Manual annotations
 
-Para acceder a estas noataciones es necesario pedir autorización a la I2D.
+Annotations are stored at the I2D of the Humboldt Institute:
+
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_cesar_2017
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_guajira_2016
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_bolivar_2017
 
-## Registros sonoros
+### Audio files
 
-Los registros sonoros se encuentran alojados en la [colección de sonidos ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Para acceder a estos es necesario pedir permiso escribiendo a coleccionesbiologicas@humboldt.org.co
+Environmental audio files are stored at the [Colección de Sonidos Ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Access to these files should be asked at coleccionesbiologicas@humboldt.org.co
 
-## 1. Cargar librerías y funciones
+### 1.Load libraries and functions
 
 ```python
 import pandas as pd
@@ -44,7 +46,7 @@ def load_format_excel(fname):
     return df
 ```
 
-## 2. Ajustar variables
+### 2. Set variables
 
 ```python
 path_annot = './annotations/test.xlsx'
@@ -55,10 +57,7 @@ troom = 1 # room before and after audio region in seconds
 fs = 22050
 ```
 
-## 3. Realizar cortes en cada archivo de audio
-
-Dar nuevo formato al DataFrame según archivos de audio y generar un código para cada uno de los cortes de audio.
-
+### 3. Use information from annotations to trim and rename audio regions
 
 ```python
 # Load data and remove empty rows
@@ -70,9 +69,7 @@ df.reset_index(inplace=True)
 df['index'] = df['record number'].str.slice(0,3).str.upper()+df['index'].apply(lambda x: str(x).zfill(3))
 df['fname_save'] = df['genus']+'_'+df['specificEpithet']+'_'+df['index']+'.wav'
 ```
-
-Ciclo recorriendo cada archivo y segmentando cada vocalización anotada
-
+Loop through each annotation and trim audio files
 
 ```python
 # Group by 'record number' which is the name of the long audio recording
@@ -99,9 +96,9 @@ for fname, df_gp in gpby:
                                  sr=fs)
 ```
 
-## Resultados
+### Resultados
 
-Como resultado, el script guarda una serie de cortes en el directorio `../audio_cortes/`. Cada corte tiene un nombre y un indice único. Además, se guarda en un archivo `*.csv` la información asociada a cada uno de los cortes.
+As a result, the script saves a list of audio regions located in the directory `../audio_cortes/`. Each region has a name and unique index and a `*.csv` compiles all the associated metadata.
 
 
 ```python
@@ -117,10 +114,10 @@ print(df.fname_save)
     6        Dysithamnus_mentalis_BOS006.wav
     Name: fname_save, dtype: object
 
-## Autor
+## Author
 
 Juan Sebastián Ulloa
 
-## Licencia
+## License
 
-Este proyecto está creado bajo la licencia MIT -- ver [LICENSE.md](LICENSE.md) para detalles
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
