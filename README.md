@@ -21,7 +21,6 @@ Para acceder a estas noataciones es necesario pedir autorización a la I2D.
 ## Registros sonoros
 Los registros sonoros se encuentran alojados en la [colección de sonidos ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Para acceder a estos es necesario pedir permiso escribiendo a coleccionesbiologicas@humboldt.org.co
 
-
 ## 1. Cargar librerías y funciones
 ----
 
@@ -125,3 +124,10 @@ print(df.fname_save)
     6        Dysithamnus_mentalis_BOS006.wav
     Name: fname_save, dtype: object
 
+## Autor
+
+Juan Sebastián Ulloa
+
+## Licencia
+
+Este proyecto está creado bajo la licencia MIT -- ver [LICENSE.md](LICENSE.md) para detalles
