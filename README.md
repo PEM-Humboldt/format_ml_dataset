@@ -3,7 +3,6 @@
 Este documento describe un paso a paso para usar anotaciones y registros sonoros para crear un set de datos fáciles de usar en un flujo de trabajo de Machine Learning. Las anotaciones siguen el formato Darwin Core de eventos de monitoreo y están alojados en la infraestructura de de datos.
 
 ## Dependencias
-----
 
 Paquetes necesarios para correr este script:
 - Python >= 3.5
@@ -11,7 +10,6 @@ Paquetes necesarios para correr este script:
 - Librosa >= 0.6
 
 ## Annotaciones manuales
-----
 
 Para acceder a estas noataciones es necesario pedir autorización a la I2D.
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_cesar_2017
@@ -19,11 +17,10 @@ Para acceder a estas noataciones es necesario pedir autorización a la I2D.
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_bolivar_2017
 
 ## Registros sonoros
+
 Los registros sonoros se encuentran alojados en la [colección de sonidos ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Para acceder a estos es necesario pedir permiso escribiendo a coleccionesbiologicas@humboldt.org.co
 
 ## 1. Cargar librerías y funciones
-----
-
 
 ```python
 import pandas as pd
@@ -48,8 +45,6 @@ def load_format_excel(fname):
 ```
 
 ## 2. Ajustar variables
-----
-
 
 ```python
 path_annot = './annotations/test.xlsx'
@@ -61,7 +56,6 @@ fs = 22050
 ```
 
 ## 3. Realizar cortes en cada archivo de audio
-----
 
 Dar nuevo formato al DataFrame según archivos de audio y generar un código para cada uno de los cortes de audio.
 
@@ -106,7 +100,6 @@ for fname, df_gp in gpby:
 ```
 
 ## Resultados
-----
 
 Como resultado, el script guarda una serie de cortes en el directorio `../audio_cortes/`. Cada corte tiene un nombre y un indice único. Además, se guarda en un archivo `*.csv` la información asociada a cada uno de los cortes.
 
