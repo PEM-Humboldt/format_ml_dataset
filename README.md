@@ -116,7 +116,7 @@ print(df.fname_save)
 
 ## Author
 
-Juan Sebastián Ulloa
+Juan Sebastián Ulloa [https://github.com/juansulloa]
 
 ## License
 
