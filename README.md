@@ -6,11 +6,12 @@ The purpose of this script is to format audio regions based on annotations store
 
 ### Prerequisites
 
-- Python >= 3.5
-- Pandas >= 0.24
-- Librosa >= 0.6
+- Python version 3.5 or higher. Packages: pandas (>= 0.24) and librosa (>= 0.6)
+```
+pip install pandas librosa
+```
 
-### Manual annotations
+### Required files: audio files and manual annotations
 
 Annotations are stored at the I2D of the Humboldt Institute:
 
@@ -18,9 +19,9 @@ Annotations are stored at the I2D of the Humboldt Institute:
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_guajira_2016
 - http://i2d.humboldt.org.co/ceiba/resource.do?r=rbb_aves_bolivar_2017
 
-### Audio files
+Audio files are sotred at at the [Colección de Sonidos Ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Access to these files should be asked at coleccionesbiologicas@humboldt.org.co
 
-Environmental audio files are stored at the [Colección de Sonidos Ambientales (CSA)](http://www.humboldt.org.co/es/noticias/actualidad/item/152-coleccion-de-sonidos-ambientales). Access to these files should be asked at coleccionesbiologicas@humboldt.org.co
+## How to run
 
 ### 1. Load libraries and functions
 
@@ -114,11 +115,8 @@ print(df.fname_save)
     6        Dysithamnus_mentalis_BOS006.wav
     Name: fname_save, dtype: object
 
-## Author
-
-Juan Sebastián Ulloa 
-(https://github.com/juansulloa)
+## Authors and contact
+[Juan Sebastián Ulloa](https://github.com/juansulloa)
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
